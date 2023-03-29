@@ -16,7 +16,7 @@
             <div class="card d-flex flex-row">
                 <div class="images_shown">
 
-                    <img :src="movie.image" alt="">
+                    <img :src="movie.image[activeImage]" alt="">
 
                     <nav class="d-flex justify-content-between align-content-between">
                         <button class="btn prev" @click="prev()">
