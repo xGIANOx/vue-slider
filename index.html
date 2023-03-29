@@ -13,33 +13,33 @@
     
     <div id="app">
         <div class="container_slider mt-5">
-            <div class="card d-flex flex-row">
-                <div class="images_shown">
-
-                    <img :src="movie.image[activeImage]" alt="">
-
-                    <nav class="d-flex justify-content-between align-content-between">
-                        <button class="btn prev" @click="prev()">
-                            <i class="fa-solid fa-chevron-up"></i>                              
-                        </button>
-
-                        <button class="btn next" @click="next()"> 
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                    </nav>
-                </div>
-
-                <div class="thumbs">
-                    <img src="./assets/img/01.webp" alt="">
-                    <img src="./assets/img/02.webp" alt="">
-                    <img src="./assets/img/03.webp" alt="">
-                    <img src="./assets/img/04.webp" alt="">
-                    <img src="./assets/img/05.webp" alt="">
-
-                </div>
+          <div class="card d-flex flex-row">
+            <div class="images_shown">
+              <img :src="movie.image[activeImage].src" :alt="movie.image[activeImage].title">
+              <nav class="d-flex justify-content-between align-content-between">
+                <button class="btn prev" @click="prev()">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button class="btn next" @click="next()">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+              </nav>
+              <div class="image_description">
+                <h3>{{ movie.image[activeImage].title }}</h3>
+                <p>{{ movie.image[activeImage].description }}</p>
+              </div>
             </div>
+            <div class="thumbs">
+              <img v-for="(image, index) in movie.image"
+                :key="index"
+                :src="image.src"
+                :alt="image.title"
+                @click="activeImage = index">
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+      
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
