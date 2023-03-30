@@ -33,3 +33,14 @@ nav{
     transform: translateX(-50%);
     height: 100%;
 }
+
+.image_description{
+    position: absolute;
+    top: 76%;
+    left: 30px;
+    background-color: #f0f8ff66;
+    padding: 1rem;
+    border-radius: 30px;
+}
+
+  
